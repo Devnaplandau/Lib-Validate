@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validate</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <form action="" method="post" class="form" id="form-resgiter">
+        <h3 class="heading">Join with us</h3>
+        <p class="description">Cùng nhau enjoy cái moment này tại here !</p>
+        <div class="spacer"></div>
+
+        <!-- <div class="form-group">
+          <label for="avatar" class="form-label">Avatar</label>
+          <input type="file" id="avatar" name="avatar" class="form-control" />
+          <span class="form-message"></span>
+        </div> -->
+
+        <div class="form-group">
+          <label for="fullname" class="form-label">Full Name </label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="VD: An Nguyễn"
+            class="form-control"
+            rules="required"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="VD: email@domain.com"
+            class="form-control"
+            rules="required|email"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter password..."
+            class="form-control"
+            rules="required|min:6"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="password_confirmaction" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            name="password_confirmaction"
+            id="password_confirmaction"
+            placeholder="Enter the password"
+            class="form-control"
+          />
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="province" class="form-label">Choose City</label>
+          <select id="province" name="province" class="form-control">
+            <option value="">-- Chọn Tỉnh/Tp --</option>
+            <option value="hni">Hà nội</option>
+            <option value="hpg">Hải Phòng</option>
+          </select>
+          <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="" class="form-label">Sex</label>
+          <div class="flex">
+            <p>Male</p>
+            <input
+              name="gender"
+              type="checkbox"
+              value="male"
+              class="form-control"
+            />
+          </div>
+
+          <div class="flex">
+            <p>Female</p>
+            <input
+              name="gender"
+              type="checkbox"
+              value="female"
+              class="form-control"
+            />
+          </div>
+          <div class="flex">
+            <p>Other</p>
+            <input
+              name="gender"
+              type="checkbox"
+              value="other"
+              class="form-control"
+            />
+          </div>
+
+          <span class="form-message"></span>
+        </div>
+      -->
+        <button class="form-submit">Subscribe Now !</button>
+      </form>
+    </div>
+
+    <!-- javascript area !! -->
+    <script src="app/validate.js"></script>
+    <script>
+      // expect/ result/ output => mong muốn của chúng ta
+
+      // Validate("#form-resgiter", {
+      //   onSubmit: function (data) {
+      //     console.log(data);
+      //   },
+      // });
+
+      // submit gửi dữ liệu
+      var form = new Validate("#form-resgiter");
+      form.onSubmit = function (data) {
+        console.log(data);
+      };
+
+      // submit hành vi mặc định = cách tạo constructor
+      // new Validate("#form-resgiter");
+    </script>
+  </body>
+</html>
